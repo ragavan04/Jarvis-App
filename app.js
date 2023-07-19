@@ -6,7 +6,7 @@ const SpeechRecognition = window.speechRecognition || window.webkitSpeechRecogni
 const recognition = new SpeechRecognition();
 const openingSound = document.querySelector("#opening-sound");
 
-const API_KEY = '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'; // Replace with your actual OpenAI API key
+const API_KEY = '____________________________________'; // Removed chat gpt api key due to security reasons, to run this program on your device you must register for an api key on the chat gpt website
 
 
 // creating chat
