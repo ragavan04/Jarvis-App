@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tektur:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500;700&family=Tektur:wght@400;500&display=swap" rel="stylesheet">
+    <title>Jarvis</title>
+  </head>
+
+  <body>
+    <!-- start up sound -->
+    <audio src="opening-sound/powerup.mp3" id="opening-sound"></audio>
+
+    <!-- background -->
+    <div class="stars"></div>
+    <div class="twinkling"></div> 
+    <div class="clouds"></div>
+
+    <!-- weather info -->
+    <div class="card">
+      <div class="weather">
+
+        <img src="images/rain.png" class="weather-icon">
+        <h1 class="temp">22°c</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+
+        <div class="col">
+          <img src="images/humidity.png">
+          <div>
+          <p class="humidity">50%</p>
+          <p>Humidity</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <img src="images/wind.png">
+          <div>
+          <p class="wind">15 km/h</p>
+          <p>Wind Speed</p>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="wrapper">
+      <div class="box">
+        <div class="circle-1">
+          <div class="circle-2">
+            <p class="jarvis-logo">Jarvis</p>
+          </div>
+        </div>
+      </div>  
+
+      <div class="button-container">
+        <button id="start">Voice Activate</button>
+        <button id="stop">Voice Stop</button>
+      </div>
+    </div>
+
+  <div class="messages"></div>
+
+  
+
+
+  <!-- music player -->
+  
+  <div class="music-container" id="music-container">
+      <div class="music-info">
+      <h4 id="title"></h4>
+      <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+      </div>
+      </div>
+
+      <audio src="music/ukulele.mp3" id="audio"></audio>
+
+      <div class="img-container">
+      <img src="music-images/ukulele.jpg" alt="music-cover" id="cover" />
+      </div>
+      
+      <div class="navigation">
+      <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+      </button>
+      </div>
+  </div>
+  </body>
+
+    <script src="app.js"></script>
+    <noscript>Javascript is needed for this webapp</noscript>
+</html>

@@ -1,0 +1,419 @@
+/* background */
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(background-images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(background-images/twinkling.png) repeat top center;
+  z-index:1;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(background-images/clouds.png) repeat top center;
+    z-index:2;
+    opacity: .4;
+    animation:move-clouds-back 200s linear infinite;
+}
+
+
+/* jarvis */
+body {
+	text-align: center;
+	margin: 0;
+	padding: 1rem;
+	color: white;
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+
+@-webkit-keyframes pulse1 {
+    0% {
+      box-shadow: 0 0 30px rgb(120, 120, 120), inset 0 0 30px rgb(120, 120, 120);
+    }
+    50% {
+      box-shadow: 0 0 150px black, inset 0 0 150px black;
+    }
+    100% {
+      box-shadow: 0 0 16px black, inset 0 0 16px black;
+    }
+}
+
+@-webkit-keyframes pulse2 {
+    0% {
+      box-shadow: 0 0 30px #0080ff, inset 0 0 30px #0080ff;
+    }
+    50% {
+      box-shadow: 0 0 150px #0080ff, inset 0 0 150px #0080ff;
+    }
+    100% {
+      box-shadow: 0 0 16px #0080ff, inset 0 0 16px #0080ff;
+    }
+}
+
+.wrapper{
+    position: fixed;
+    z-index: 100;
+}
+.circle-1 {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 5000px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5) inset, 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    animation: pulse1 3s linear 1s infinite;
+}  
+
+  .circle-2 {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border-radius: 50000px;
+    box-shadow: 0 0px 50px #3c49e0, inset 0 0 8px #3737e3;
+    animation: pulse2 3s linear 1s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s;
+}
+  
+  .jarvis-logo {
+    display: block;
+    text-align: center;
+    line-height: 100px;
+    font-family: 'Tektur';
+    font-weight: 100;
+    font-size: 50px;
+    color: #2a8be6;
+    text-shadow: 0 0 4px #2a8be6;
+}
+
+  .circle-2:hover{
+    height: 500px;
+    width: 500px;
+    border-radius: 5000px;
+}
+
+  
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container button{
+    font-family: monospace;
+    font-weight: bold;
+    background: linear-gradient(360deg, rgb(59, 58, 58), rgb(164, 167, 169));
+    color: rgb(0, 0, 0);
+    transform: translateX(13px);
+    border-radius: 50px;
+    border: none;
+    height: 50px;
+    width: 120px;
+    margin-top: 15px;
+    margin-right: 30px;
+    transition: 0.5s;
+    box-shadow: 0px 0px 50px 10px rgba(142, 145, 147, 0.6);
+}
+
+.button-container button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+
+/* messages */
+.messages {
+    border-color: black;
+    border-radius: 50px;
+    position: fixed; /* Change to 'fixed' position */
+    top: 50%; /* Set top position to 50% */
+    left: 10%; /* Set left position to 50% */
+    transform: translate(-50%, -50%); /* Move element by -50% of its own width and height */
+    max-height: 400px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Use 'justify-content' instead of 'justify-self' */
+    padding-bottom: 15px;
+    z-index: 1000;
+    border: 0px solid #000; /* Set your desired border properties */
+    box-shadow: 0 0 10px 10px rgba(135, 135, 135, 0.5); /* Set the glow effect */
+}
+
+.messages::-webkit-scrollbar{
+    display: none;
+}
+
+.usermsg{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    width: 300px;
+    background: linear-gradient(180deg, rgb(79, 79, 79), rgb(56, 57, 58));
+    color: rgb(255, 255, 255);
+}
+
+.jmsg{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-top: 5px;
+    width: 300px;
+    background: linear-gradient(180deg, rgb(161, 161, 161), rgb(144, 144, 144));
+    color: rgb(255, 255, 255);
+}
+
+
+  
+
+
+
+/* weather */
+.weather-icon{
+    width: 100px;
+    margin-top: -20px;
+}
+  
+.weather h1{
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+   
+.weather h2{
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: -40px;
+}
+  
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+  
+  
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+  
+.col img{
+    width: 30px;
+    margin-right: 10px;
+    margin-top: -40px;
+}
+ 
+
+.humidity, .wind{
+    font-size: 15px;
+    margin-top: -40px;
+}
+  
+  
+.card {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 400px;
+    height: 300px;
+    max-width: 470px;
+    background: linear-gradient(360deg, rgb(59, 58, 58), rgb(164, 167, 169));
+    color: #fff;
+    border-radius: 500px;
+    padding: 40px 35px;
+    text-align: center;
+    z-index: 101;
+    box-shadow: -5px 20px 20px 0 rgba(142, 145, 147, 0.6);
+    animation: shadowPulse 3s ease-in-out infinite;
+}
+  
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0px 20px 20px 0 rgba(142, 145, 147, 0.6);
+    }
+    50% {
+        box-shadow: 0px -25px 25px 10px rgba(142, 145, 147, 0.8);
+    }
+    100% {
+        box-shadow: 0px 20px 20px 0 rgba(142, 145, 147, 0.6);
+    }
+}
+  
+
+/* music */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.music-container {
+    background: linear-gradient(360deg, rgb(77, 77, 77), rgb(164, 167, 169));
+    border-radius: 15px;
+    box-shadow: -5px 20px 20px 0 rgba(142, 145, 147, 0.6);
+    display: flex;
+    padding: 20px 30px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    margin: 100px 0;
+    z-index: 10;
+    animation: shadowPulse1 3s ease-in-out infinite;
+}
+  
+@keyframes shadowPulse1 {
+    0% {
+      box-shadow: 0px 20px 20px 0 rgba(142, 145, 147, 0.6);
+    }
+    50% {
+      box-shadow: 0px -10px 25px 10px rgba(142, 145, 147, 0.8);
+    }
+    100% {
+      box-shadow: 0px 20px 20px 0 rgba(142, 145, 147, 0.6);
+    }
+}
+  
+  
+.img-container {
+    position: relative;
+    width: 110px;
+}
+  
+.img-container::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, 50%);
+}
+  
+.img-container img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+  
+    animation-play-state: paused;
+}
+  
+.music-container.play .img-container img {
+    animation-play-state: running;
+}
+  
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+  
+.action-btn {
+    background-color: #8b8b8b;
+    border: 0;
+    border-radius: 10px;
+    color: #dfdbdf;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+}
+  
+.action-btn.action-btn-big {
+    color: #cdc2d0;
+    font-size: 30px;
+}
+  
+.action-btn:focus {
+    outline: 0;
+}
+  
+.music-info {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 200px;
+    padding: 10px 10px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: 0;
+}
+  
+.music-container.play .music-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+  
+.music-info h4 {
+    margin: 0;
+}
+  
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+  
+.progress {
+    background-color: #fe8daa;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+
