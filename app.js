@@ -52,9 +52,7 @@ recognition.onresult = async function (event) {
     if (transcript.includes("hi jarvis")){
         readOut("hello sir, how are you doing today");
     } else if (transcript.includes("what is your name")){
-        readOut("my name is jarvis you saniyan");
-    } else if (transcript.includes("swear in tamil")){
-        readOut("you saniyan peadachi naai, kundi moonja, paradesi, loosu");
+        readOut("my name is jarvis you");
     } else if (transcript.includes("open youtube")){
         readOut("opening youtube sir");
         window.open("https://www.youtube.com/");
